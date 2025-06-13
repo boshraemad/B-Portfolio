@@ -1,15 +1,16 @@
 import NavBar from "../components/navbar";
 import Landing from "../components/landing";
-import Separator from "../components/separator";
 import AboutMe from "../sections/aboutMe";
 import Stats from "../sections/stats";
+import Footer from "../sections/footer";
 function HomePage(){
     return(
-       <div className="p-6">
+       <div>
          <NavBar/>
          <Landing/>
          <AboutMe/>
          <Stats/>
+         <Footer/>
        </div>
     )
 }
