@@ -5,8 +5,8 @@ import { RiFlowerFill } from "react-icons/ri";
 function NavBar(){
     return(
 
-        <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <nav className="bg-white dark:bg-gray-900 sticky w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div className="w-full flex flex-wrap items-center justify-between py-3">
         <a href="#" className="flex items-center gap-1 space-x-3 rtl:space-x-reverse text-xl font-bold">
                <RiFlowerFill className="text-pink-300"/> BoshraEmad
         </a>

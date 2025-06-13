@@ -1,8 +1,12 @@
-import NavBar from "../components/navbar"
+import NavBar from "../components/navbar";
+import Landing from "../components/landing";
 
 function HomePage(){
     return(
-        <NavBar/>
+       <div className="p-4">
+         <NavBar/>
+         <Landing/>
+       </div>
     )
 }
 
