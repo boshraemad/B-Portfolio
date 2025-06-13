@@ -58,7 +58,7 @@ function Stats(){
     return(
         <div id="stats" className="bg-pink-50 p-4">
             <Separator>Github Stats</Separator>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
                 <div className="p-4">
                     <h3 className="mt-6 mb-6 text-sm text-gray-500">Most Used Languages</h3>
                     <ul className="space-y-4">
