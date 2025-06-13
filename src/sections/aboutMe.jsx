@@ -13,7 +13,7 @@ function AboutMe(){
     return(
         <div id="about-me" className="about-me-section bg-gray-50 p-4">
             <Separator>About Me</Separator>
-            <div className="grid grid-cols-3 mt-6 gap-3 ">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-3 ">
                 <div className="card cursor-pointer p-6 rounded-xl border-1 border-gray-200 hover:bg-pink-200 hover:text-white shadow-sm ">
                     <span className="p-2  text-3xl w-10 h-10 rounded-full border-pink-300 border-2 flex items-center justify-center"><FaCode/></span>
                     <h3 className="font-[600] text-2xl mt-3">Web Developement</h3>
