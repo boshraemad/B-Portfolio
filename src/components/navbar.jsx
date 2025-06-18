@@ -1,8 +1,12 @@
 import { FaDownload } from "react-icons/fa";
 import { RiFlowerFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import scrollToElement from "../utils/scrollToElement";
+import { useLocation } from "react-router-dom";
 
 function NavBar(){
+    const location=useLocation();
+
     return(
 
         <nav className="bg-white dark:bg-gray-900 sticky w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 p-4">
@@ -22,16 +26,16 @@ function NavBar(){
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-300">
         <li>
-            <NavLink to="/" className="block py-2 px-3 text-white bg-pink-300 rounded-sm md:bg-transparent md:text-pink-400 md:p-0 md:dark:text-pink-500" aria-current="page">Home</NavLink>
+            <NavLink onClick={()=>{scrollToElement("home")}} to="/#home" end className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.pathname==="/" && location.hash === "#home" ? "text-pink-400" : ""}`} aria-current="page">Home</NavLink>
         </li>
         <li>
-            <a href="#about-me" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-400 md:p-0 md:dark:hover:text-pink-500 dark:text-white dark:hover:bg-gray-300 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-300">About</a>
+            <NavLink onClick={()=>{scrollToElement("about-me")}} to="/#about-me" end  className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.hash === "#about-me" ? "text-pink-400" : ""}`}>About</NavLink>
         </li>
         <li>
-            <a href="#stats" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-400 md:p-0 md:dark:hover:text-pink-500 dark:text-white dark:hover:bg-gray-300 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-300">Stats</a>
+            <NavLink onClick={()=>{scrollToElement("stats")}} to="/#stats"  end  className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.hash === "#stats" ? "text-pink-400" : ""}`}>Stats</NavLink>
         </li>
         <li>
-            <NavLink to="projects" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-400 md:p-0 md:dark:hover:text-pink-500 dark:text-white dark:hover:bg-gray-300 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-300">Projects</NavLink>
+            <NavLink to="projects" end className={({isActive})=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${isActive ? "text-pink-400" : ""}`}>Projects</NavLink>
         </li>
         </ul>
         </div>

@@ -9,7 +9,7 @@ import { FaReact } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
 function Landing(){
     return(
-        <div className="landing w-full h-[calc(100vh-87px)] flex flex-col-reverse lg:flex-row items-center justify-between gap-6 p-12 cursor-pointer bg-pink-50">
+        <div id="home" className="landing w-full h-[calc(100vh-87px)] flex flex-col-reverse lg:flex-row items-center justify-between gap-6 p-12 cursor-pointer bg-pink-50">
             <div className="info lg:flex-1/2 flex-1 text-center lg:text-start">
                 <p className="mb-1">Hey, I'm Boshra</p>
                 <h1 className="lg:text-8xl text-5xl font-bold mb-6"><span className="text-pink-300">Front</span>end<br/>Developer</h1>
