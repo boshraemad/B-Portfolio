@@ -1,16 +1,11 @@
 import NavBar from "../components/navbar";
-import Landing from "../components/landing";
-import AboutMe from "../sections/aboutMe";
-import Stats from "../sections/stats";
-import Footer from "../sections/footer";
+import HomePageLayout from "./homePageLayout";
+import { Outlet } from "react-router-dom";
 function HomePage(){
     return(
        <div>
-         <NavBar/>
-         <Landing/>
-         <AboutMe/>
-         <Stats/>
-         <Footer/>
+          <NavBar/>
+          <Outlet/>
        </div>
     )
 }
