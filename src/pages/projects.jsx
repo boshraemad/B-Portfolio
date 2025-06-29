@@ -2,13 +2,20 @@ import { FaRegSquarePlus } from "react-icons/fa6";
 import { useState , useEffect } from "react";
 import { getProjects , deleteProject } from "../supabase/projects-services";
 import Dialog from "../components/dialog";
+import { initFlowbite } from "flowbite";
 
 function Projects(){
     const [ projects , setProjects ] = useState([]);
 
     useEffect(()=>{
+        initFlowbite();
+     })
+
+    useEffect(()=>{
         getProjects(setProjects);
     } , [])
+
+
 
    const projectsList = projects.map((project)=>{
         return(
@@ -26,7 +33,7 @@ function Projects(){
                 {project.status}
             </td>
             <td className="px-6 py-4 flex items-center gap-1">
-                <button className="font-medium text-white dark:text-pink-500 py-1 px-3 rounded-sm bg-pink-300">Edit</button>
+                <Dialog  header="Edit Project" id={`crud-modal-${project.id}`} projectId={project.id} edit={true}>Edit</Dialog>
                 <button onClick={()=>{deleteProject(project.id)}} className=" cursor-pointer font-medium text-white dark:text-pink-500 py-1 px-3 rounded-sm bg-black hover:text-gray-300">Delete</button>
             </td>
         </tr>
@@ -34,7 +41,7 @@ function Projects(){
     })
     return(
         <div className="p-4">
-        <div className="flex items-center justify-between"><h1 className="mb-6 text-xl font-bold">My projects</h1><Dialog>add project</Dialog></div>
+        <div className="flex items-center justify-between"><h1 className="mb-6 text-xl font-bold">My projects</h1><Dialog header="Add Product" id="crud-modal-one" edit={false}>add project</Dialog></div>
         <div className="relative overflow-x-auto shadow-md">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
