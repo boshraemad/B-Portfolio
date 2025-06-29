@@ -10,6 +10,13 @@ export const getProjects = async (setProjects)=>{
 
 }
 
+export const getProjectById = async ( setProjectName , setProjectDemo , setProjectRepo , setProjectStatus , id )=>{
+    const { error , data } = await supabase.from("projects").select("*").eq("id" , id);
+    setProjectName(data[0]?.name || "");
+    setProjectDemo(data[0]?.demo || "");
+    setProjectRepo(data[0]?.repo || "");
+    setProjectStatus(data[0]?.status || "");
+}
 export const addProject = async (project)=>{
     const { error , data } = await supabase.from("projects").insert(project).single();
     if(error){
@@ -17,8 +24,8 @@ export const addProject = async (project)=>{
     }
 }
 
-export const editProject = async (id , newProject)=>{
-    const { error , data } = await supabase.from("projects").update({newProject}).eq("id" , id);
+export const editProject = async (id , field)=>{
+    const { error , data } = await supabase.from("projects").update(field).eq("id" , id);
     if(error){
         console.log(error)
     }
