@@ -26,16 +26,16 @@ function NavBar(){
         <div className="absolute md:relative md:top-0 md:left-0 top-[65px] left-0 z-50 items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-300">
         <li>
-            <NavLink onClick={()=>{scrollToElement("home")}} to="/#home" end className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.pathname==="/" && location.hash === "#home" ? "text-pink-400" : ""}`} aria-current="page">Home</NavLink>
+            <NavLink onClick={()=>{scrollToElement("home")}} to="../home/#home" end className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.pathname==="/" && location.hash === "#home" ? "text-pink-400" : ""}`} aria-current="page">Home</NavLink>
         </li>
         <li>
-            <NavLink onClick={()=>{scrollToElement("about-me")}} to="/#about-me" end  className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.hash === "#about-me" ? "text-pink-400" : ""}`}>About</NavLink>
+            <NavLink onClick={()=>{scrollToElement("about-me")}} to="../home/#about-me" end  className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.hash === "#about-me" ? "text-pink-400" : ""}`}>About</NavLink>
         </li>
         <li>
-            <NavLink onClick={()=>{scrollToElement("stats")}} to="/#stats"  end  className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.hash === "#stats" ? "text-pink-400" : ""}`}>Stats</NavLink>
+            <NavLink onClick={()=>{scrollToElement("stats")}} to="../home/#stats"  end  className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.hash === "#stats" ? "text-pink-400" : ""}`}>Stats</NavLink>
         </li>
         <li>
-            <NavLink to="projects" end className={({isActive})=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${isActive ? "text-pink-400" : ""}`}>Projects</NavLink>
+            <NavLink to="../home/projects" end className={({isActive})=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${isActive ? "text-pink-400" : ""}`}>Projects</NavLink>
         </li>
         </ul>
         </div>
