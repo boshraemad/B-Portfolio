@@ -2,6 +2,7 @@ import { FaRegSquarePlus } from "react-icons/fa6";
 import { useState , useEffect } from "react";
 import { getProjects , deleteProject } from "../supabase/projects-services";
 import Dialog from "../components/dialog";
+import Loading from "../components/loading";
 import { initFlowbite } from "flowbite";
 import {
     useQuery,
@@ -14,22 +15,19 @@ function Projects(){
         initFlowbite();
      })
 
-    // useEffect(()=>{
-    //     getProjects(setProjects);
-    // } , [])
-
     //use reactQuery Client
     const queryClient = useQueryClient();
-    const query=useQuery({
+    const {isLoading}=useQuery({
         queryKey: ['projects'],
-        queryFn: getProjects(setProjects)
+        queryFn: getProjects(setProjects),
+
     })
 
     const mutation = useMutation({
         mutationFn: deleteProject,
         onSuccess: () => {
-          // Invalidate and refetch
-          queryClient.invalidateQueries({ queryKey: ['projects'] })
+          // refetch
+          queryClient.refetchQueries({ queryKey: ['projects'] })
         },
       })
 
@@ -58,31 +56,32 @@ function Projects(){
     return(
         <div className="p-4">
         <div className="flex items-center justify-between"><h1 className="mb-6 text-xl font-bold">My projects</h1><Dialog header="Add Product" id="crud-modal-one" edit={false}>add project</Dialog></div>
-        <div className="relative overflow-x-auto shadow-md">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" className="px-6 py-3">
-                            Project name
-                        </th>
-                        <th scope="col" className="px-6 py-3">
-                            Demo
-                        </th>
-                        <th scope="col" className="px-6 py-3">
-                            Repo Link
-                        </th>
-                        <th scope="col" className="px-6 py-3">
-                            state
-                        </th>
-                        <th scope="col" className="px-6 py-3">
-                            Controllers
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {projectsList}
-                </tbody>
-            </table>
+        <div className="relative overflow-x-auto">
+            {isLoading ? <div className="w-full flex items-center justify-center"><Loading/> </div>: 
+                        <table className=" shadow-md w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" className="px-6 py-3">
+                                    Project name
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Demo
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Repo Link
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    state
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Controllers
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {projectsList}
+                        </tbody>
+                    </table>}
         </div>
             </div>
 
