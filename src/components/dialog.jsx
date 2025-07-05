@@ -1,6 +1,10 @@
 import { useState , useEffect } from "react";
 import { addProject } from "../supabase/projects-services";
 import { editProject , getProjectById } from "../supabase/projects-services";
+import {
+
+    useMutation,
+    useQueryClient} from '@tanstack/react-query'
 
 function Dialog({ children , header , id , edit , projectId }){
     const [projectName , setProjectName]=useState("");
@@ -36,7 +40,15 @@ function Dialog({ children , header , id , edit , projectId }){
             addProject(data);
         }
     }
- 
+
+    const queryClient = useQueryClient();
+    const mutation = useMutation({
+        mutationFn: onSubmit,
+        onSuccess: () => {
+          // Invalidate and refetch
+          queryClient.invalidateQueries({ queryKey: ['projects'] })
+        },
+      })
     return(
        <>
        <button data-modal-target={id} data-modal-toggle={id} className="block text-white cursor-pointer bg-pink-300 hover:bg-pink-400 focus:ring-2 focus:outline-none focus:ring-pink-300 font-medium rounded-sm text-sm py-1 px-3 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800" type="button">
@@ -80,7 +92,7 @@ function Dialog({ children , header , id , edit , projectId }){
                         </select>
                     </div>
                 </div>
-                <button type="submit" className="text-white inline-flex items-center bg-pink-300 hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800">       
+                <button type="submit" className="text-white inline-flex items-center bg-pink-300 hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800" onClick={()=>{mutation.mutate()}}>       
                     submit
                 </button>
             </form>

@@ -3,7 +3,10 @@ import { useState , useEffect } from "react";
 import { getProjects , deleteProject } from "../supabase/projects-services";
 import Dialog from "../components/dialog";
 import { initFlowbite } from "flowbite";
-
+import {
+    useQuery,
+    useMutation,
+    useQueryClient} from '@tanstack/react-query'
 function Projects(){
     const [ projects , setProjects ] = useState([]);
 
@@ -11,11 +14,24 @@ function Projects(){
         initFlowbite();
      })
 
-    useEffect(()=>{
-        getProjects(setProjects);
-    } , [])
+    // useEffect(()=>{
+    //     getProjects(setProjects);
+    // } , [])
 
+    //use reactQuery Client
+    const queryClient = useQueryClient();
+    const query=useQuery({
+        queryKey: ['projects'],
+        queryFn: getProjects(setProjects)
+    })
 
+    const mutation = useMutation({
+        mutationFn: deleteProject,
+        onSuccess: () => {
+          // Invalidate and refetch
+          queryClient.invalidateQueries({ queryKey: ['projects'] })
+        },
+      })
 
    const projectsList = projects.map((project)=>{
         return(
@@ -34,7 +50,7 @@ function Projects(){
             </td>
             <td className="px-6 py-4 flex items-center gap-1">
                 <Dialog  header="Edit Project" id={`crud-modal-${project.id}`} projectId={project.id} edit={true}>Edit</Dialog>
-                <button onClick={()=>{deleteProject(project.id)}} className=" cursor-pointer font-medium text-white dark:text-pink-500 py-1 px-3 rounded-sm bg-black hover:text-gray-300">Delete</button>
+                <button  onClick={() => { mutation.mutate(project.id) }} className=" cursor-pointer font-medium text-white dark:text-pink-500 py-1 px-3 rounded-sm bg-black hover:text-gray-300">Delete</button>
             </td>
         </tr>
         )
