@@ -10,7 +10,7 @@ function Dialog({ children , header , id , edit , projectId }){
     const [projectName , setProjectName]=useState("");
     const [projectDemo , setProjectDemo]=useState("");
     const [projectRepo , setProjectRepo]=useState("");
-    const [projectStatus , setProjectStatus]=useState("");
+    const [projectStatus , setProjectStatus]=useState("completed");
 
     useEffect(()=>{
 
@@ -45,8 +45,8 @@ function Dialog({ children , header , id , edit , projectId }){
     const mutation = useMutation({
         mutationFn: onSubmit,
         onSuccess: () => {
-          // Invalidate and refetch
-          queryClient.invalidateQueries({ queryKey: ['projects'] })
+          // refetch
+          queryClient.refetchQueries({ queryKey: ['projects'] })
         },
       })
     return(
