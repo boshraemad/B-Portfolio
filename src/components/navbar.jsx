@@ -10,7 +10,7 @@ function NavBar(){
     return(
 
         <nav className="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 p-4">
-        <div className="w-full flex flex-wrap items-center justify-between py-3">
+        <div className=" relative w-full flex flex-wrap items-center justify-between py-3">
         <a href="#" className="flex items-center gap-1 space-x-3 rtl:space-x-reverse text-xl font-bold">
                <RiFlowerFill className="text-pink-300"/> BoshraEmad
         </a>
@@ -23,7 +23,7 @@ function NavBar(){
             </svg>
         </button>
         </div>
-        <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+        <div className="absolute md:relative md:top-0 md:left-0 top-[65px] left-0 z-50 items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-300">
         <li>
             <NavLink onClick={()=>{scrollToElement("home")}} to="/#home" end className={()=>`block py-2 px-3 rounded-sm md:bg-transparent  md:p-0 md:dark:text-pink-500 ${location.pathname==="/" && location.hash === "#home" ? "text-pink-400" : ""}`} aria-current="page">Home</NavLink>
