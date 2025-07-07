@@ -14,7 +14,7 @@ function Signup(){
       email,
       password,
       options: {
-        emailRedirectTo: 'http://localhost:5173/home', 
+        emailRedirectTo: 'https://b-portfolio-pink.vercel.app/home', 
       },
     }
 
