@@ -3,6 +3,8 @@ import { RiFlowerFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import scrollToElement from "../utils/scrollToElement";
 import { useLocation } from "react-router-dom";
+import { HiLogout } from "react-icons/hi";
+import { logout } from "../supabase/Auth";
 
 function NavBar(){
     const location=useLocation();
@@ -15,7 +17,10 @@ function NavBar(){
                <RiFlowerFill className="text-pink-300"/> BoshraEmad
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <a  href="/Boshra-Emad-Awad-CV.pdf" download="Boshra-Emad-Awad-CV.pdf" className="flex items-center gap-2  cursor-pointer text-white bg-pink-300 hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-pink-600 dark:hover:bg-pink-300 dark:focus:ring-pink-800"><FaDownload/></a>
+        <div className="flex items-center gap-2">
+            <a  href="/Boshra-Emad-Awad-CV.pdf" download="Boshra-Emad-Awad-CV.pdf" className="flex items-center gap-2  cursor-pointer text-white bg-pink-300 hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-pink-600 dark:hover:bg-pink-300 dark:focus:ring-pink-800"><FaDownload/></a>
+            <button onClick={()=>{logout()}}><HiLogout className="text-red-600 text-lg cursor-pointer"/></button>
+        </div>
         <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-300 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
             <span className="sr-only">Open main menu</span>
             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">

@@ -1,24 +1,32 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { signUp } from "../supabase/Auth";
+
+
 function Signup(){
+  const [ email , setEmail]=useState("");
+  const [ password , setPassword ]=useState("");
+  // const [error , setError]=useState("");
+
+  const onSubmit=(e)=>{
+    e.preventDefault();
+    const data ={
+      email,
+      password,
+      options: {
+        emailRedirectTo: 'http://localhost:5173/home', 
+      },
+    }
+
+
+    signUp(data);
+
+  }
+
     return(
         <div className="h-[100vh] w-full  flex items-center justify-center bg-pink-50">
-        <form className="md:w-[450px] w-[350px] mx-auto p-10 rounded-md bg-white">
+        <form className="md:w-[450px] w-[350px] mx-auto p-10 rounded-md bg-white" onSubmit={onSubmit}>
         <h1 className="text-xl mb-5 font-bold text-pink-300">Signup</h1>
-        <div className="mb-5">
-            <label
-              htmlFor="username"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Your username
-            </label>
-            <input
-              type="text"
-              id="username"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-pink-500 focus:border-pink-500 block w-full px-3 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500"
-              placeholder="username"
-              required
-            />
-          </div>
           <div className="mb-5">
             <label
               htmlFor="email"
@@ -32,6 +40,7 @@ function Signup(){
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-pink-500 focus:border-pink-500 block w-full px-3 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500"
               placeholder="Enter Your Email"
               required
+              onChange={(e)=>{setEmail(e.target.value)}}
             />
           </div>
           <div className="mb-5">
@@ -47,6 +56,7 @@ function Signup(){
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-pink-500 focus:border-pink-500 block w-full px-3 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500"
               placeholder="Enter Your password"
               required
+              onChange={(e)=>{setPassword(e.target.value)}}
             />
           </div>
           <div  className="flex items-center gap-2">
