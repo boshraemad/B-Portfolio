@@ -13,7 +13,7 @@ function NavBar(){
     },[])
     return(
 
-        <nav className="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 p-4">
+        <nav className="bg-white w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 p-4">
         <div className=" relative w-full flex flex-wrap items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-1 space-x-3 rtl:space-x-reverse text-xl font-bold">
                <RiFlowerFill className="text-pink-300"/> BoshraEmad

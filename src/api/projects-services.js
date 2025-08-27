@@ -16,3 +16,11 @@ export const getProjectById = async ( id )=>{
     }
     return data
 }
+
+export const updateLikes = async (data)=>{
+    const {error , data:res} = await supabase.from("projects").update({"likes" : data.likes}).eq("id" , data.id)
+    if(error){
+        throw new Error(error);
+    }
+    return res
+}
