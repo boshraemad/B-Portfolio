@@ -7,13 +7,19 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { FaBootstrap } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
+import TextType from '../../react-bits/TextType/TextType';
 function Landing(){
     return(
-        <div id="home" className="landing w-full h-[calc(100vh-87px)] flex flex-col-reverse lg:flex-row items-center justify-between gap-6 p-12 cursor-pointer bg-pink-50">
+        <div id="home" className="landing w-full h-[calc(100vh-87px)] flex flex-col-reverse lg:flex-row items-center justify-between gap-6 p-12 cursor-pointer bg-black">
             <div className="info lg:flex-1/2 flex-1 text-center lg:text-start">
-                <p className="mb-1">Hey, I'm Boshra</p>
-                <h1 className="lg:text-8xl text-5xl font-bold mb-6"><span className="text-pink-300">Front</span>end<br/>Developer</h1>
-                <p className="text-gray-400 mb-6">I'm a passionate frontend developer based in Egypt</p>
+                <p className="mb-1 text-pink-200">Hey, I'm Boshra</p>
+                <TextType 
+  text={["Front-End" , "Developer" , "From Egypt"]}
+  typingSpeed={75}
+  pauseDuration={1000}
+  showCursor={true}
+  cursorCharacter="|"
+/>
                 <motion.ul className="flex gap-3 " 
                 initial={{ '--rotate': '0deg' }}
                 animate={{ '--rotate': '360deg' }}

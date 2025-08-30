@@ -20,7 +20,7 @@ function PieChart({langaugesData}){
         activeOuterRadiusOffset={8}
         colors={{ scheme: 'pink_yellowGreen' }}
         arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor="#333333"
+        arcLinkLabelsTextColor="#eee"
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: 'color' }}
         arcLabelsSkipAngle={10}

@@ -11,15 +11,14 @@ import { FaGithubSquare } from "react-icons/fa";
 
 function AboutMe(){
     return(
-        <div id="about-me" className="about-me-section bg-gray-50 p-4">
+        <div id="about-me" className="about-me-section bg-black p-4 text-white">
             <Separator>About Me</Separator>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-3 ">
-                <div className="card cursor-pointer p-6 rounded-xl border-1 border-gray-200 hover:bg-pink-200 hover:text-white shadow-sm ">
-                    <span className="p-2  text-3xl w-10 h-10 rounded-full border-pink-300 border-2 flex items-center justify-center"><FaCode/></span>
+                <div className="card cursor-pointer p-6 rounded-xl border-1 border-gray-200 shadow-sm ">
                     <h3 className="font-[600] text-2xl mt-3">Web Developement</h3>
                     <p className="mt-3 leading-8 ">i use my knowledge of various programming langauges such as HTML5,CSS3,JAVASCRIPT,TAILWIND to bulid digital solutions for users.</p>
                 </div>
-                <div className="card cursor-pointer p-6 rounded-xl border-1 border-gray-200 hover:bg-pink-200 hover:text-white shadow-sm ">
+                <div className="card cursor-pointer p-6 rounded-xl border-1 border-gray-200 shadow-sm ">
                   
                     <h3 className="font-[600] text-2xl mt-3">Technical Skills</h3>
                     <ul className="mt-3 space-y-2">
@@ -33,7 +32,7 @@ function AboutMe(){
                     <li className="flex gap-1 items-center"><FaGithubSquare className="text-2xl"/><span>Version Control using git & github</span></li>
                     </ul>
                 </div>
-                <div className="card cursor-pointer p-6 rounded-xl border-1 border-gray-200 hover:bg-pink-200 hover:text-white shadow-sm ">
+                <div className="card cursor-pointer p-6 rounded-xl border-1 border-gray-200">
                     <h3 className="font-[600] text-2xl mt-3">Soft Skills</h3>
                     <ul className="mt-3 space-y-2 list-disc">
                         <li>Time Management</li>

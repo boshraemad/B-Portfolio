@@ -56,7 +56,7 @@ function Stats(){
         getStatesData();
     },[])
     return(
-        <div id="stats" className="bg-pink-50 p-4">
+        <div id="stats" className="bg-black p-4 text-white">
             <Separator>Github Stats</Separator>
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
                 <div className="p-4">
