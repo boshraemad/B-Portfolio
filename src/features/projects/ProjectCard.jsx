@@ -8,11 +8,11 @@ export default function ProjectCard({project}) {
     const [liked , setLiked] = useState();
     const updateLikes = useUpdateLikes();
   return (
-    <div className="w-full h-full relative bg-white">
-        <img src={image} className="object-cover"/>
+    <div className="max-w-sm w-full rounded-2xl bg-white/5 backdrop-blur-lg shadow-lg p-3 text-white/80">
+        <img src={image} className="object-cover rounded-sm"/>
         <div className="flex justify-between items-center px-3"><p className="font-semibold mt-2">{name}</p><div className="flex items-center gap-2"><span>{likes}</span><FaRegHeart onClick={()=>updateLikes({id:id , likes:liked ? likes-1 : likes+1})} className="cursor-pointer"/></div></div>
         <div className="mt-6 flex items-center gap-3 px-3 mb-2">
-            <a className="text-xl" href={repo}><FaGithub/></a>
+            <a className="text-xl text-white" href={repo}><FaGithub/></a>
             <a className="text-xl text-blue-600" href={demo}><TbWorld/></a>
         </div>
     </div>

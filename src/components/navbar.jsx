@@ -25,6 +25,9 @@ function NavBar(){
             <BreadcrumbLink><NavLink to="/projects">Projects</NavLink></BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink className="cursor-pointer" href="/Boshra-Emad-Awad.pdf" download="Boshra-Emad-Awad.pdf" title="download-resume" ><FaDownload/></BreadcrumbLink>
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
        </div>
