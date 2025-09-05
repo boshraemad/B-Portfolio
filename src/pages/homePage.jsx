@@ -1,6 +1,6 @@
 import NavBar from "../components/navbar";
 import Footer from "../sections/footer";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 function HomePage(){
 
     return(
