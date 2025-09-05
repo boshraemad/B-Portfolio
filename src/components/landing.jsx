@@ -10,7 +10,7 @@ import { SiRedux } from "react-icons/si";
 import TextType from '../../react-bits/TextType/TextType';
 function Landing(){
     return(
-        <div className="landing w-full h-[calc(100vh-87px)] flex flex-col-reverse lg:flex-row items-center gap-6 p-12 cursor-pointer bg-black">
+        <div className="landing w-[95%] mx-auto h-[calc(100vh-87px)] flex flex-col-reverse lg:flex-row items-center gap-6 p-12 cursor-pointer bg-black">
             <div className="info lg:flex-1/2 flex-1 text-center lg:text-start">
                 <p className="mb-1 text-pink-200">Hey, I'm Boshra</p>
                 <TextType 
