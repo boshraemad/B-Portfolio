@@ -18,11 +18,11 @@ function NavBar(){
         <Breadcrumb className="flex items-center justify-center absolute top-[20px] max-w-[600px] left-[50%] translate-x-[-50%] px-4 py-4 rounded-lg bg-[#eeeeee82]">
         <BreadcrumbList className="text-black">
           <BreadcrumbItem>
-            <BreadcrumbLink><NavLink to="/">Home</NavLink></BreadcrumbLink>
+            <BreadcrumbLink asChild><NavLink to="/">Home</NavLink></BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink><NavLink to="/projects">Projects</NavLink></BreadcrumbLink>
+            <BreadcrumbLink asChild><NavLink to="/projects">Projects</NavLink></BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
