@@ -1,6 +1,6 @@
 import { FaDownload } from "react-icons/fa";
 import { RiFlowerFill } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import {
     Breadcrumb,
     BreadcrumbItem,
