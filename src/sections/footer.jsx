@@ -16,11 +16,11 @@ function Footer(){
                         </ul>
                     </div>
                     <div className="text-white">
-                        <p className="text-sm text-gray-400">socials media handles</p>
+                        <p className="text-sm text-gray-400">Social Media</p>
                         <ul className="flex items-center gap-3 mt-3 text-xl">
-                            <li className="hover:text-pink-300 cursor-pointer"><a href="https://github.com/boshraemad" target="_blank"><FaGithub/></a></li>
-                            <li className="hover:text-pink-300 cursor-pointer"><a><FaSquareXTwitter/></a></li>
-                            <li className="hover:text-pink-300 cursor-pointer"><a><FaInstagram/></a></li>
+                            <li className="hover:text-pink-300 cursor-pointer transition duration-300"><a href="https://github.com/boshraemad" target="_blank"><FaGithub/></a></li>
+                            <li className="hover:text-pink-300 cursor-pointer transition duration-300"><a><FaSquareXTwitter/></a></li>
+                            <li className="hover:text-pink-300 cursor-pointer transition duration-300"><a><FaInstagram/></a></li>
                         </ul>
                     </div>
                 </div>

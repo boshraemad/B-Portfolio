@@ -1,6 +1,6 @@
 import "flowbite";
 import HomePage from "./pages/homePage";
-import { Routes, Route, Navigate } from "react-router";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
 import HomePageLayout from "./pages/homePageLayout";
 import Projects from "./pages/projects";
