@@ -11,17 +11,17 @@ import { FaGithubSquare } from "react-icons/fa";
 
 function AboutMe(){
     return(
-        <div id="about-me" className="about-me-section bg-black p-4 text-white/80">
+        <div id="about-me" className="about-me-section bg-black text-white/80">
             <Separator>About Me</Separator>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-3 ">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 lg:gap-3 gap-2 ">
                 <div className="card cursor-pointer p-6 rounded-xl border-1 border-white/10 shadow-sm ">
-                    <h3 className="font-[600] text-2xl mt-3">Web Developement</h3>
-                    <p className="mt-3 leading-8 ">i use my knowledge of various programming langauges such as HTML5,CSS3,JAVASCRIPT,TAILWIND to bulid digital solutions for users.</p>
+                    <h3 className="font-[600] lg:text-2xl text-xl mt-3">Web Developement</h3>
+                    <p className="mt-3 leading-8 lg:text-md text-sm ">i use my knowledge of various programming langauges such as HTML5,CSS3,JAVASCRIPT,TAILWIND to bulid digital solutions for users.</p>
                 </div>
                 <div className="card cursor-pointer p-6 rounded-xl border-1 border-white/10 shadow-sm ">
                   
-                    <h3 className="font-[600] text-2xl mt-3">Technical Skills</h3>
-                    <ul className="mt-3 space-y-2">
+                    <h3 className="font-[600] lg:text-2xl text-xl mt-3">Technical Skills</h3>
+                    <ul className="mt-3 space-y-2 lg:text-md text-sm">
                     <li  className="flex gap-1 items-center"><FaHtml5 className="text-[#e34f26]  text-2xl"/><span>HTML5</span></li>
                     <li  className="flex gap-1 items-center "><IoLogoCss3 className="text-2xl text-[#2965f1]"/><span>CSS3</span></li>
                     <li  className="flex gap-1 items-center"><FaJs className="text-2xl text-[#f7df1e]"/><span>JS</span></li>
@@ -33,8 +33,8 @@ function AboutMe(){
                     </ul>
                 </div>
                 <div className="card cursor-pointer p-6 rounded-xl border-1 border-white/10">
-                    <h3 className="font-[600] text-2xl mt-3">Soft Skills</h3>
-                    <ul className="mt-3 space-y-2">
+                    <h3 className="font-[600] lg:text-2xl text-xl mt-3">Soft Skills</h3>
+                    <ul className="mt-3 space-y-2 lg:text-md text-sm">
                         <li>Time Management</li>
                         <li>Team Work</li>
                         <li>Communication Skills</li>
