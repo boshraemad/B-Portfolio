@@ -1,6 +1,6 @@
 import { FaDownload } from "react-icons/fa";
-import { RiFlowerFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { useTheme } from "./theme-provider";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -10,13 +10,18 @@ import {
     BreadcrumbSeparator,
   } from "../components/ui/breadcrumb"
 import TopLight from "./LightRays";
+import { ModeToggle } from "./mode-toggle";
 
 function NavBar(){
+  const {theme} = useTheme();
     return(
-       <div className="relative h-[100px] bg-black">
-       <TopLight/>
-        <Breadcrumb className="flex items-center justify-center absolute top-[20px] max-w-[600px] left-[50%] translate-x-[-50%] px-4 py-4 rounded-lg bg-[#eeeeee82]">
-        <BreadcrumbList className="text-black">
+       <div className="relative h-[100px]">
+        {theme === "light" ? null :  <TopLight/>}
+        <Breadcrumb className="flex items-center justify-center absolute top-[20px] max-w-[600px] left-[50%] translate-x-[-50%] lg:px-4 lg:py-4 px-2 py-1 rounded-lg bg-foreground">
+        <BreadcrumbList className="text-white">
+        <BreadcrumbItem>
+           <ModeToggle/>
+          </BreadcrumbItem>
           <BreadcrumbItem>
             <BreadcrumbLink asChild><NavLink to="/">Home</NavLink></BreadcrumbLink>
           </BreadcrumbItem>

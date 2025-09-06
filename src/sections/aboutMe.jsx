@@ -8,17 +8,16 @@ import { FaBootstrap } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
 import { FaGithubSquare } from "react-icons/fa";
-
 function AboutMe(){
     return(
-        <div id="about-me" className="about-me-section bg-black text-white/80">
+        <div id="about-me" className="about-me-section bg-background text-primary">
             <Separator>About Me</Separator>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 lg:gap-3 gap-2 ">
-                <div className="card cursor-pointer p-6 rounded-xl border-1 border-white/10 shadow-sm ">
+                <div className="bg-card cursor-pointer p-4 rounded-xl border-1 border-white/10 shadow-sm ">
                     <h3 className="font-[600] lg:text-2xl text-xl mt-3">Web Developement</h3>
                     <p className="mt-3 leading-8 lg:text-md text-sm ">i use my knowledge of various programming langauges such as HTML5,CSS3,JAVASCRIPT,TAILWIND to bulid digital solutions for users.</p>
                 </div>
-                <div className="card cursor-pointer p-6 rounded-xl border-1 border-white/10 shadow-sm ">
+                <div className="bg-card cursor-pointer p-6 rounded-xl border-1 border-white/10 shadow-sm ">
                   
                     <h3 className="font-[600] lg:text-2xl text-xl mt-3">Technical Skills</h3>
                     <ul className="mt-3 space-y-2 lg:text-md text-sm">
@@ -32,7 +31,7 @@ function AboutMe(){
                     <li className="flex gap-1 items-center"><FaGithubSquare className="text-2xl"/><span>Version Control using git & github</span></li>
                     </ul>
                 </div>
-                <div className="card cursor-pointer p-6 rounded-xl border-1 border-white/10">
+                <div className="bg-card cursor-pointer p-6 rounded-xl border-1 border-white/10 shadow-sm">
                     <h3 className="font-[600] lg:text-2xl text-xl mt-3">Soft Skills</h3>
                     <ul className="mt-3 space-y-2 lg:text-md text-sm">
                         <li>Time Management</li>

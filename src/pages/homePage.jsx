@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 function HomePage(){
 
     return(
-       <div className="grid grid-rows-[auto_minmax(600px,_1fr)_auto] bg-black">
+       <div className="grid grid-rows-[auto_minmax(600px,_1fr)_auto] bg-background">
          <NavBar/>
           <main className="p-2">
           <Outlet/>

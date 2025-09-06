@@ -6,12 +6,13 @@ import HomePageLayout from "./pages/homePageLayout";
 import Projects from "./pages/projects";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
+import { ThemeProvider } from "./components/Theme-Provider";
 const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
+   <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <Routes>
         <Route path="/" element={<HomePage />}>
@@ -20,6 +21,7 @@ function App() {
         </Route>
       </Routes>
     </QueryClientProvider>
+   </ThemeProvider>
   );
 }
 
