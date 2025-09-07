@@ -17,7 +17,7 @@ function NavBar(){
     return(
        <div className="relative h-[100px]">
         {theme === "light" ? null :  <TopLight/>}
-        <Breadcrumb className="flex items-center justify-center absolute top-[20px] max-w-[600px] left-[50%] translate-x-[-50%] lg:px-4 lg:py-4 px-2 py-1 rounded-lg bg-foreground">
+        <Breadcrumb className="flex items-center justify-center absolute top-[20px] lg:w-[350px] md:w-[300px] sm:w-[250px] w-[220px] left-[50%] translate-x-[-50%] p-2 rounded-lg bg-foreground">
         <BreadcrumbList className="text-white">
         <BreadcrumbItem>
            <ModeToggle/>
