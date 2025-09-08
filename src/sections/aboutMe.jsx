@@ -10,9 +10,9 @@ import { SiRedux } from "react-icons/si";
 import { FaGithubSquare } from "react-icons/fa";
 function AboutMe(){
     return(
-        <div id="about-me" className="about-me-section bg-background text-primary">
+        <div id="about-me" className="about-me-section bg-background text-primary p-4">
             <Separator>About Me</Separator>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 lg:gap-3 gap-2 ">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 lg:gap-3 gap-2">
                 <div className="bg-card cursor-pointer p-4 rounded-xl border-1 border-white/10 shadow-sm ">
                     <h3 className="font-[600] lg:text-2xl text-xl mt-3">Web Developement</h3>
                     <p className="mt-3 leading-8 lg:text-md text-sm ">i use my knowledge of various programming langauges such as HTML5,CSS3,JAVASCRIPT,TAILWIND to bulid digital solutions for users.</p>

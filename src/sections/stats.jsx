@@ -56,10 +56,10 @@ function Stats(){
         getStatesData();
     },[])
     return(
-        <div id="stats" className="bg-background text-primary">
+        <div id="stats" className="bg-background text-primary p-4">
             <Separator>Github Stats</Separator>
-            <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
-                <div className="p-4">
+            <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
+                <div>
                     <h3 className="mt-6 mb-6 text-sm text-gray-500">Most Used Languages</h3>
                     <ul className="space-y-4">
                     {
@@ -71,7 +71,7 @@ function Stats(){
                     }
                     </ul>
                 </div>
-                <div className="pie-chart h-[400px] cursor-pointer " >
+                <div className="pie-chart h-[400px] cursor-pointer xl:w-[600px] lg:w-[500px] md:w-[400px] w-[350px]" >
                     <PieChart langaugesData={mostUsedLanguages}/>
                 </div>
             </div>

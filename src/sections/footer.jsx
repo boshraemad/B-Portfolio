@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 function Footer(){
     return(
-        <div className="footer bg-black border-t-1 border-white/10 p-2">
+        <div className="footer bg-black border-t-1 border-white/10 p-4">
                 <div className="w-full mx-auto grid lg:grid-cols-3 grid-cols-2">
                     <div className="border-e-2 border-white/10 text-white">
                         <p className="hover:text-pink-300 font-[600] flex items-center gap-1"><RiFlowerFill className="text-pink-300"/>Frontend Developer</p>
